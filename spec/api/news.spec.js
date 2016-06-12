@@ -12,7 +12,7 @@ describe('News API', ()=>{
     app = server.start();
   });
 
-  it('should be exists', (done)=>{
+  it('should be alive', (done)=>{
     request(app)
       .get('/news')
       .expect(200)
