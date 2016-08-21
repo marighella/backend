@@ -19,6 +19,13 @@ describe('News API', ()=>{
     app.close();
   });
 
+  it('should be broken', (done)=>{
+    request(app)
+      .get('/news')
+      .expect(400)
+      .end(fails(done));
+  });
+
   it('should be alive', (done)=>{
     request(app)
       .get('/news')
