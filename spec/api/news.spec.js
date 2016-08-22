@@ -13,7 +13,7 @@ describe('News API', ()=>{
   var app;
 
   beforeEach(()=>{
-    app = server.start();
+    app = server.start(6666);
     db.connection.db.dropDatabase();
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
   });
