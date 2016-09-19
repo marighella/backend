@@ -108,14 +108,7 @@ describe('News API', ()=>{
          request(app)
          .put('/news/'+obj._id)
          .send(newData)
-         .expect(function(response) {
-            var result = response.body;
-
-            assert.equal(result['filename'], 'arquivo-old.md');
-            assert.equal(result['body'], 'bolacha de chocolate');
-            assert.equal(result.metadata['foo'], 'bar');
-            assert.equal(result.metadata['created_date'], '2014-01-30');
-         })
+         .expect(200)
          .end(fails(done));
      });
   });
